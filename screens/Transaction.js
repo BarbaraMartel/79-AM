@@ -166,7 +166,7 @@ export default class TransactionScreen extends Component {
                 style={styles.scanbutton}
                 onPress={() => this.getCameraPermissions("bookId")}
               >
-                <Text style={styles.scanbuttonText}>Scan</Text>
+                <Text style={styles.scanbuttonText}>Escanear</Text>
               </TouchableOpacity>
             </View>
             <View style={[styles.textinputContainer, { marginTop: 25 }]}>
@@ -180,14 +180,14 @@ export default class TransactionScreen extends Component {
                 style={styles.scanbutton}
                 onPress={() => this.getCameraPermissions("studentId")}
               >
-                <Text style={styles.scanbuttonText}>Scan</Text>
+                <Text style={styles.scanbuttonText}>Escanear</Text>
               </TouchableOpacity>
             </View>
             <TouchableOpacity
               style={[styles.button, { marginTop: 25 }]}
               onPress={this.handleTransaction}
             >
-              <Text style={styles.buttonText}>Submit</Text>
+              <Text style={styles.buttonText}>Enviar</Text>
             </TouchableOpacity>
           </View>
         </ImageBackground>
