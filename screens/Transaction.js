@@ -104,7 +104,7 @@ export default class TransactionScreen extends Component {
   }; */
 
   initiateBookIssue = async (bookId, studentId, bookName, studentName) => {
-    //add a transaction
+    //añade una transacción
     db.collection("transactions").add({
       student_id: studentId,
       student_name: studentName,
@@ -119,14 +119,14 @@ export default class TransactionScreen extends Component {
       .update({
         is_book_available: false
       });
-    //change number  of issued books for student
+    //cambia el número de libros enviados al alumno
     db.collection("students")
       .doc(studentId)
       .update({
         number_of_books_issued: firebase.firestore.FieldValue.increment(1)
       });
 
-    // Updating local state
+    // Actualiza local state
     this.setState({
       bookId: "",
       studentId: ""
@@ -134,7 +134,7 @@ export default class TransactionScreen extends Component {
   };
 
   initiateBookReturn = () => {
-    console.log("Book returned to the library!");
+    console.log("Libro devuelto a la biblioteca");
   };
 
   render() {
