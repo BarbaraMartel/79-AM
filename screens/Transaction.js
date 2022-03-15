@@ -113,7 +113,7 @@ export default class TransactionScreen extends Component {
       date: firebase.firestore.Timestamp.now().toDate(),
       transaction_type: "issue"
     });
-    //change book status
+    //cambia el estatus del libro
     db.collection("books")
       .doc(bookId)
       .update({
