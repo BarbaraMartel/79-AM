@@ -119,7 +119,7 @@ export default class TransactionScreen extends Component {
       .update({
         is_book_available: false
       });
-    //cambia el número de libros enviados al alumno
+    //cambia el número de libros emitidos al alumno
     db.collection("students")
       .doc(studentId)
       .update({
