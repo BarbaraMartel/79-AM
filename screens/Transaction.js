@@ -75,63 +75,25 @@ export default class TransactionScreen extends Component {
   };
 
   
-  getBookDetails = bookId => {
-    bookId = bookId.trim();
-    db.collection("books")
-      .where("book_id", "==", bookId)
-      .get()
-      .then(snapshot => {
-        snapshot.docs.map(doc => {
-          this.setState({
-            bookName: doc.data().book_details.book_name
-          });
-        });
-      });
-  };
+  /*  getBookDetails = bookId => {
+
+  };  */
 
   /* getStudentDetails = studentId => {
-    studentId = studentId.trim();
-    db.collection("students")
-      .where("student_id", "==", studentId)
-      .get()
-      .then(snapshot => {
-        snapshot.docs.map(doc => {
-          this.setState({
-            studentName: doc.data().student_details.student_name
-          });
-        });
-      });
+
   }; */
 
-  initiateBookIssue = async (bookId, studentId, bookName, studentName) => {
+   /* initiateBookIssue = async (bookId, studentId, bookName, studentName) => {
     //añade una transacción
-    db.collection("transactions").add({
-      student_id: studentId,
-      student_name: studentName,
-      book_id: bookId,
-      book_name: bookName,
-      date: firebase.firestore.Timestamp.now().toDate(),
-      transaction_type: "issue"
-    });
+
     //cambia el estatus del libro
-    db.collection("books")
-      .doc(bookId)
-      .update({
-        is_book_available: false
-      });
+
     //cambia el número de libros emitidos al alumno
-    db.collection("students")
-      .doc(studentId)
-      .update({
-        number_of_books_issued: firebase.firestore.FieldValue.increment(1)
-      });
+
 
     // Actualiza local state
-    this.setState({
-      bookId: "",
-      studentId: ""
-    });
-  };
+
+  }; */
 
   initiateBookReturn = () => {
     console.log("Libro devuelto a la biblioteca");
